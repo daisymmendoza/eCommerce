@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- Bebas Neue font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+    <!-- Oswald font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+
+    <!-- Source Code Pro font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@1,500&display=swap" rel="stylesheet">
+
+    <!-- Quicksand -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+
+    <!-- Josefin Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <title>RAINE About Us</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        width: 100%;
+        height: 100vh;
+        background-color: white;
+        font-family: sans-serif;
+        position: relative;
+    }
+
+    #shipBanner {
+        background-color: rgb(228, 228, 228);
+        text-align: center;
+        color: black;
+        font-family: sans-serif;
+        padding: 5px;
+        margin: 0px;
+    }
+
+    #logo {
+        width: 100px;
+        height: 45px;
+    }
+
+    #banner {
+        width: 100%;
+    }
+
+    .dropbtn {
+        color: grey;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+
+    #myInput {
+        box-sizing: border-box;
+        background-repeat: no-repeat;
+        font-size: 16px;
+        padding: 7px;
+        border: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    #myInput:focus {
+        outline: 3px solid #7ECD80;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f6f6f6;
+        min-width: 230px;
+        overflow: auto;
+        border: 1px solid #ddd;
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-family: sans-serif;
+        font-size: .8em;
+    }
+
+    .dropdown a:hover {
+        background-color: #ddd;
+    }
+
+    .show1 {
+        display: block;
+    }
+
+    .btn-outline-light {
+        border: solid #7ECD80;
+        margin-left: 8px;
+    }
+
+    .btn-outline-light:hover {
+        background-color: #7ECD80;
+        border: solid #7ECD80;
+    }
+
+    #aboutSec {
+        text-align: center;
+        width: 50%;
+        margin-left: 25%;
+        padding: 50px;
+    }
+
+    #aboutHead {
+        font-family: 'Josefin Sans', sans-serif;
+    }
+
+    #aboutDesc {
+        font-family: 'Quicksand', sans-serif;
+        font-size: 1.2em;
+    }
+
+    #foot {
+        text-align: center;
+        background-color: #222529;
+        color: white;
+        padding: 50px;
+    }
+
+    #foot a{
+        text-decoration: none;
+        color: white;
+        padding: 20px 10px;
+    }
+
+    #foot a:hover{
+        color: #7ECD80;
+    }
+</style>
+</head>
+<body>
+    <!-- Free shipping banner -->
+    <p id="shipBanner">Free U.S. Shipping On Orders Over $50</p>
+    <nav class="navbar navbar-expand-xl sticky-top navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img id="logo" src="images/logo.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDark" aria-controls="navbarDark" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse show" id="navbarDark">
+                <ul class="navbar-nav me-auto mb-2 mb-xl-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="newPage.html">New</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Mens</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Womens</a>
+                    </li>
+                </ul>
+                <form class="d-flex" autocomplete="off">
+                    <div class="dropdown"> 
+                        <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" id="myInput" onclick="myFunction()" class="dropbtn" onkeyup="filterFunction()">
+                        <div id="myDropdown" class="dropdown-content">
+                            <a href="index.html"><b>Home</b>- Page</a>
+                            <a href="newPage.html"><b>New</b>- Page</a>
+                            <a href="#"><b>Men</b>- Page</a>
+                            <a href="#"><b>Women</b>- Page</a>
+                            <a href="sweaterProductPage.html"><b>80's Vintage Sweater</b>- Item</a>
+                            <a href="cargoProductPage.html"><b>Khaki Cargo Pants</b>- Item</a>
+                            <a href="teeProductPage.html"><b>Y2K Graphic Tee</b>- Item</a>
+                            <a href="sweatsProductPage.html"><b>Fleece Cargo Sweat Pants</b>- Item</a>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+
+            </div>
+        </div>
+
+        <script>
+            /* When the user clicks on the button,
+            toggle between hiding and showing the dropdown content */
+            function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show1");
+            }
+    
+            function filterFunction() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("myDropdown");
+            a = div.getElementsByTagName("a");
+            for (i = 0; i < a.length; i++) {
+                txtValue = a[i].textContent || a[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                a[i].style.display = "";
+                } else {
+                a[i].style.display = "none";
+                }
+            }
+            }
+        </script>
+    </nav>
+    <div class="container"></div>
+    
+    <header>
+        <img id="banner" src="images/aboutBanner.png" alt="">
+    </header>
+
+    <section>
+        <div id="aboutSec">
+            <h1 id="aboutHead">About Us</h1>
+            <p id="aboutDesc">Here at RAINE, we believe in a world of expression and individualism. To experiment. To discover who you are and who you're not. To grow, without judgement. So we design with your interests in mind, making sure there's something you're sure to rock. We exist to compliment what you already have, and to give you the confidence to show it to the world.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div id="foot">
+            <div class="footerLinks">
+                <a href="aboutPage.html">About Us</a>
+                <a href="contactPage.html">Contact</a>
+                <a href="termsPage.html">Terms and Conditions</a>
+                <a href="privacypolicyPage.html">Privacy Policy</a>
+                <a href="shippingReturnPage.html">Shipping and Returns</a>
+            </div>
+
+            <br>
+
+            <div class="footerCopyright">
+                <p>&COPY; 2022 RAINE</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
