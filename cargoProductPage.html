@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- Bebas Neue font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+    <!-- Oswald font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+
+    <!-- Lato font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+        <!-- Lato font (bold) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <script src="addProductScript.js"></script>
+    
+    <title>RAINE Khaki Cargo Pants</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        width: 100%;
+        height: 100vh;
+        background-color: white;
+        font-family: sans-serif;
+        position: relative;
+        background-color: rgb(231, 231, 231);
+    }
+
+    #shipBanner {
+        background-color: rgb(228, 228, 228);
+        text-align: center;
+        color: black;
+        font-family: sans-serif;
+        padding: 5px;
+        margin: 0px;
+    }
+
+    #logo {
+        width: 100px;
+        height: 45px;
+    }
+
+    #cart {
+        width: 37px;
+        height: 37px;
+        margin-left: 1%;
+    }
+
+    #cart:hover {
+        cursor: pointer;
+    }
+
+    #banner {
+        width: 100%;
+    }
+
+    .dropbtn {
+        color: grey;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+
+    #myInput {
+        box-sizing: border-box;
+        background-repeat: no-repeat;
+        font-size: 16px;
+        padding: 7px;
+        border: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    #myInput:focus {
+        outline: 3px solid #7ECD80;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f6f6f6;
+        min-width: 230px;
+        overflow: auto;
+        border: 1px solid #ddd;
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-family: sans-serif;
+        font-size: .8em;
+    }
+
+    .dropdown a:hover {
+        background-color: #ddd;
+    }
+
+    .show1 {
+        display: block;
+    }
+
+    .btn-outline-light {
+        border: solid #7ECD80;
+        margin-left: 8px;
+    }
+
+    .btn-outline-light:hover {
+        background-color: #7ECD80;
+        border: solid #7ECD80;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    #myimage {
+        width: 100%;
+        height: auto;
+    }
+
+    .img-magnifier-container {
+        position:relative;
+        margin-top: 3%;
+        margin-left: 12%;
+        margin-right: 7%;
+        width: 40%;
+    }
+
+    .img-magnifier-glass {
+        position: absolute;
+        border: 2px solid #000;
+        border-radius: 10%;
+        cursor: none;
+        /*Set the size of the magnifier glass:*/
+        width: 100px;
+        height: 100px;
+    }
+
+    .productInfo {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .productDetails {
+        margin-top: 6%;
+    }
+
+    .productTitle {
+        font-family: 'Lato', sans-serif;
+    }
+
+    .productDesc {
+        font-family: 'Lato', sans-serif;
+        font-size: 1.1em;
+    }
+
+    .productPrice {
+        font-family: 'Lato', sans-serif;
+        font-size: 1.2em;
+    }
+
+    #buyBtn {
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1.1em;
+        color: white;
+        background-color: #7ECD80;
+    }
+
+    #buyBtn:hover {
+        background-color: #5fa862;
+    }
+
+    #returnDelivSec {
+        margin-top: 20px;
+        border: solid black;
+        padding: 15px;
+    }
+
+    #returnDelivInfo {
+        font-size: 1em;
+    }
+
+    #deliverIcon {
+        width: 30px;
+        height: auto;
+    }
+
+    #returnIcon {
+        width: 25px;
+        height: auto;
+        margin-right: 5px;
+    }
+
+    #shipReturnLink {
+        color: #5fa862;
+    }
+
+    .container1 {
+        padding-left: 50px;
+        padding-right: 50px;
+        overflow: hidden;
+    }
+
+    .card {
+        width: 80%;
+        text-align: center;
+        margin-left: 5%;
+    }
+
+    .btn-primary {
+        background-color: #7ECD80;
+        border: #7ECD80;
+    }
+
+    .btn-primary:hover {
+        background-color: #5fa862;
+    }
+
+    #relatedSec {
+        margin-top: 7%;
+    }
+
+    #relatedHead {
+        margin-left: 67px;
+        margin-bottom: 30px;
+        font-family: 'Lato', sans-serif;
+    }
+
+    /* Sidebar */
+    .checkbar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        margin-top: 70px;
+        background-color: #222529;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+    }
+
+    .checkbar a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: white;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .checkbar a:hover {
+        color: rgb(226, 226, 226);
+    }
+
+    .checkbar .closebtn {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding-top: 30px;
+        font-size: 36px;
+        margin-right: 50px;
+    }
+
+    .openbtn {
+        font-size: 20px;
+        cursor: pointer;
+        background-color: #DCC7AA;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+    }
+
+    .openbtn:hover {
+        background-color: #444;
+    }
+
+    .summaryItems {
+        font-size: 1.1em;
+        line-height: 43px;
+        margin-left: 30px;
+        margin-top: 20px;
+        color: white;
+    }
+
+    #checkoutTitle {
+        font-size: 1.3em;
+        margin-bottom: -15px;
+    }
+
+    #checkbtn {
+        width: 79%;
+        height: auto;
+        margin-left: 30px;
+        margin-top: 30px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.1em;
+        padding: 3%;
+        background-color: #7ECD80;
+        color: black;
+        text-align: center;
+    }
+
+    #checkbtn:hover {
+        cursor: pointer;
+        background-color: #5fa862;
+    }
+    /* End of sidebar */
+
+    #foot {
+        text-align: center;
+        background-color: #222529;
+        color: white;
+        padding: 50px;
+        margin-top: 50px;
+    }
+
+    #foot a{
+        text-decoration: none;
+        color: white;
+        padding: 20px 10px;
+    }
+
+    #foot a:hover{
+        color: #7ECD80;
+    }
+</style>
+<script>
+    function magnify(imgID, zoom) {
+        var img, glass, w, h, bw;
+        img = document.getElementById(imgID);
+        /*create magnifier glass:*/
+        glass = document.createElement("DIV");
+        glass.setAttribute("class", "img-magnifier-glass");
+        /*insert magnifier glass:*/
+        img.parentElement.insertBefore(glass, img);
+        /*set background properties for the magnifier glass:*/
+        glass.style.backgroundImage = "url('" + img.src + "')";
+        glass.style.backgroundRepeat = "no-repeat";
+        glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
+        bw = 3;
+        w = glass.offsetWidth / 2;
+        h = glass.offsetHeight / 2;
+        /*execute a function when someone moves the magnifier glass over the image:*/
+        glass.addEventListener("mousemove", moveMagnifier);
+        img.addEventListener("mousemove", moveMagnifier);
+        /*and also for touch screens:*/
+        glass.addEventListener("touchmove", moveMagnifier);
+        img.addEventListener("touchmove", moveMagnifier);
+        function moveMagnifier(e) {
+            var pos, x, y;
+            /*prevent any other actions that may occur when moving over the image*/
+            e.preventDefault();
+            /*get the cursor's x and y positions:*/
+            pos = getCursorPos(e);
+            x = pos.x;
+            y = pos.y;
+            /*prevent the magnifier glass from being positioned outside the image:*/
+            if (x > img.width - (w / zoom)) {
+                x = img.width - (w / zoom);
+            }
+            if (x < w / zoom) {
+                x = w / zoom;
+            }
+            if (y > img.height - (h / zoom)) {
+                y = img.height - (h / zoom);
+            }
+            if (y < h / zoom) {
+                y = h / zoom;
+            }
+            /*set the position of the magnifier glass:*/
+            glass.style.left = (x - w) + "px";
+            glass.style.top = (y - h) + "px";
+            /*display what the magnifier glass "sees":*/
+            glass.style.backgroundPosition = "-" + ((x * zoom) - w + bw) + "px -" + ((y * zoom) - h + bw) + "px";
+        }
+      function getCursorPos(e) {
+        var a, x = 0, y = 0;
+        e = e || window.event;
+        /*get the x and y positions of the image:*/
+        a = img.getBoundingClientRect();
+        /*calculate the cursor's x and y coordinates, relative to the image:*/
+        x = e.pageX - a.left;
+        y = e.pageY - a.top;
+        /*consider any page scrolling:*/
+        x = x - window.pageXOffset;
+        y = y - window.pageYOffset;
+        return {x : x, y : y};
+      }
+    }
+</script>
+</head>
+<body>
+    <!-- Free shipping banner -->
+    <p id="shipBanner">Free U.S. Shipping On Orders Over $50</p>
+    <nav class="navbar navbar-expand-xl sticky-top navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img id="logo" src="images/logo.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDark" aria-controls="navbarDark" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse show" id="navbarDark">
+                <ul class="navbar-nav me-auto mb-2 mb-xl-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="newPage.html">New</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Mens</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Womens</a>
+                    </li>
+                </ul>
+                <form class="d-flex" autocomplete="off">
+                    <div class="dropdown"> 
+                        <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" id="myInput" onclick="myFunction()" class="dropbtn" onkeyup="filterFunction()">
+                        <div id="myDropdown" class="dropdown-content">
+                            <a href="index.html"><b>Home</b>- Page</a>
+                            <a href="newPage.html"><b>New</b>- Page</a>
+                            <a href="#"><b>Men</b>- Page</a>
+                            <a href="#"><b>Women</b>- Page</a>
+                            <a href="sweaterProductPage.html"><b>80's Vintage Sweater</b>- Item</a>
+                            <a href="cargoProductPage.html"><b>Khaki Cargo Pants</b>- Item</a>
+                            <a href="teeProductPage.html"><b>Y2K Graphic Tee</b>- Item</a>
+                            <a href="sweatsProductPage.html"><b>Fleece Cargo Sweat Pants</b>- Item</a>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+
+                <img id="cart" src="images/cart.png" alt="Cart Button" onclick="openCheck()">
+            </div>
+        </div>
+
+        <script>
+            /* When the user clicks on the button,
+            toggle between hiding and showing the dropdown content */
+            function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show1");
+            }
+    
+            function filterFunction() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("myDropdown");
+            a = div.getElementsByTagName("a");
+            for (i = 0; i < a.length; i++) {
+                txtValue = a[i].textContent || a[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                a[i].style.display = "";
+                } else {
+                a[i].style.display = "none";
+                }
+            }
+            }
+        </script>
+    </nav>
+    <div class="container"></div>
+    
+    <header>
+
+    </header>
+
+    <section>
+        <div class="productInfo">
+            <div class="img-magnifier-container">
+                <img id="myimage" src="images/cargopants.png" width="600" height="400">
+            </div>
+            <div class="productDetails">
+                <h2 class="productTitle">Khaki Cargo Pants</h2>
+                <p class="productDesc">Non-restrictive, unisex cargo pants in khaki.</p>
+                <p class="productPrice"><b>$25</b></p>
+                <br>
+                <p class="productDesc">Color: Khaki</p>
+                <p class="productDesc">Size:</p>
+                <select class="form-select productDesc" aria-label="Default select" id="sizeSelect">
+                    <option selected="">Please Select</option>
+                    <option value="Small">Small</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Large">Large</option>
+                    <option value="X-Large">X-Large</option>
+                  </select>
+                <button id="buyBtn" onclick="cargo.calcShipping(), cargo.summary(), openCheck()">Add to Bag</button>
+                <div id="returnDelivSec">
+                    <p id="returnDelivInfo">
+                        <img src="images/deliveryIcon.png" id="deliverIcon" alt="Truck Icon"> Free delivery
+                        <br>
+                        <img src="images/returnIcon.png" id="returnIcon" alt="Return Icon"> Free returns
+
+                        <br>
+                        <br>
+
+                        Check our <a href="shippingReturnPage.html" id="shipReturnLink">shipping and return policies</a> for more information
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="relatedSec">
+            <h3 id="relatedHead">Related Items</h3>
+            <div class="container1">
+                <div class="row row-cols-1 row-cols-md-4 g-4">
+                    <div class="col">
+                        <div class="card h-100 filterDiv tops">
+                          <img src="images/cozysweater.png" class="card-img-top" alt="Knit sweater">
+                          <div class="card-body">
+                            <h5 class="card-title">80's Vintage Sweater</h5>
+                            <p class="card-text">Vintage-feel, oversized sweater in brown and beige</p>
+                            <p class="card-text"><b>$35.00</b></p>
+                            <a href="sweaterProductPage.html" class="btn btn-primary stretched-link">View</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="card h-100 filterDiv tops">
+                          <img src="images/y2kshirt.png" class="card-img-top" alt="Y2K shirt">
+                          <div class="card-body">
+                            <h5 class="card-title">Y2K Graphic Tee</h5>
+                            <p class="card-text">Y2K inspired graphic t-shirt with purple floral design</p>
+                            <p class="card-text"><b>$23.00</b></p>
+                            <a href="teeProductPage.html" class="btn btn-primary stretched-link">View</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="card h-100 filterDiv bottoms">
+                          <img src="images/joggers.png" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Fleece Cargo Sweat Pants</h5>
+                            <p class="card-text">Soft, heavyweight fleece pants in black</p>
+                            <p class="card-text"><b>$33.00</b></p>
+                            <a href="sweatsProductPage.html" class="btn btn-primary stretched-link">View</a>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            magnify("myimage", 2);
+        </script>
+    </section>
+
+    <!-- Checkout sidebar -->
+    <div id="myCheckbar" class="checkbar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeCheck()">×</a>
+
+        <p id="checkoutTitle" class="summaryItems">Cart Items</p>
+        <p id="product" class="summaryItems">Your cart is empty.</p>
+        <p id="productSize" class="summaryItems"></p>
+        <p id="cost" class="summaryItems"></p>
+        <p id="ship" class="summaryItems"></p>
+        <p id="total" class="summaryItems"></p>
+
+        <a href="checkoutPage.html" id="checkbtn">Checkout</a>
+    </div>
+
+    <footer>
+        <div id="foot">
+            <div class="footerLinks">
+                <a href="aboutPage.html">About Us</a>
+                <a href="contactPage.html">Contact</a>
+                <a href="termsPage.html">Terms and Conditions</a>
+                <a href="privacypolicyPage.html">Privacy Policy</a>
+                <a href="shippingReturnPage.html">Shipping and Returns</a>
+            </div>
+
+            <br>
+
+            <div class="footerCopyright">
+                <p>&COPY; 2022 RAINE</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
